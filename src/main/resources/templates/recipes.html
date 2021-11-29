@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/cs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body class="applyImage2">
+<!--rendering all the recipes-->
+<div class="mimi">
+    <h2 style="margin-left:30px;color:#1a8f20;font-weight:bold;font-size:40px;"><span th:text="${numrecipe}"></span><span > Recipes Found</span></h2>
+    <div class="col-sm-5" align = "center">
+        <div class="panel-body" align = "center" >
+            <table>
+                </thead>
+                <tbody class="fade">
+                <tr  th:each="recipe: ${listrecipe }">
+                    <div id="myList" class="element">
+                        <p style="font-size:22px;font-weight:bold">Recipe:   <span th:text="${recipe.Title}" style="font-size:23px;font-weight:normal;text-transform: capitalize;"></span></p>
+                        <p style="margin:0"><span style="font-size:22px;font-weight:bold;">Cuisine:  </span><span th:text="${recipe.Cuisine}" style="font-size:23px;font-weight:normal;margin-right:20px;"></span><span style="display:inline-block; vertical-align: top;"><img  th:class="${recipe.Cuisine}" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Indian Cuisine" style="width:50px;height:50px;border-radius:30%"></span> <span style="font-size:22px;font-weight:bold;margin-left:100px">Source: </span><span th:text="${recipe.Source}" style="font-size:23px;font-weight:normal"></span><span style="display:inline-block; margin-left:300px; "><form th:action="${recipe.Links}" target="_blank"><input class="button button4" type="submit" value="Full Recipe" /></form></span></p>
+                        <p style="font-size:22px;font-weight:bold; margin-top: 5px">Ingredients:   <span th:text="${recipe.Ingredients}" style="font-size:23px;font-weight:normal; text-transform: capitalize;"></span></p>
+                    </div>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+<!--flags selection-->
+   window.onload = function() {
+<!--Indian Flag-->
+   var x=document.getElementsByClassName('Indian Subcontinent');
+   for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/in.svg";
+  }
+<!--  USA Flag-->
+   x=document.getElementsByClassName('USA');
+   for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/us.svg";
+  }
+<!--  Italy-->
+   x=document.getElementsByClassName('Italy');
+   for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/it.svg";
+  }
+<!--  Mexico-->
+     x=document.getElementsByClassName('Mexico');
+   for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/mx.svg";
+  }
+<!--  France-->
+     x=document.getElementsByClassName('France');
+   for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/fr.svg";
+  }
+<!--Canada  -->
+     x=document.getElementsByClassName('Canada');
+   for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/ca.svg";
+  }
+<!--Caribbean  -->
+    x=document.getElementsByClassName('Caribbean');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/cu.svg";
+  }
+ <!--British Isles  -->
+    x=document.getElementsByClassName('British Isles');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/gb.svg";
+  }
+  <!--Middle East  -->
+    x=document.getElementsByClassName('Middle East');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/ae.svg";
+  }
+  <!--China  -->
+    x=document.getElementsByClassName('China');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/cn.svg";
+  }
+  <!--Greece  -->
+    x=document.getElementsByClassName('Greece');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/gr.svg";
+  }
+    <!--Spain  -->
+    x=document.getElementsByClassName('Spain');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/es.svg";
+  }
+   <!--Spain  -->
+    x=document.getElementsByClassName('Spain');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/es.svg";
+  }
+    <!--Thailand  -->
+    x=document.getElementsByClassName('Thailand');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/th.svg";
+  }
+   <!--Africa  -->
+    x=document.getElementsByClassName('Africa');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/za.svg";
+  }
+   <!--South East Asia -->
+    x=document.getElementsByClassName('South East Asia');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/id.svg";
+  }
+  <!--Japan -->
+    x=document.getElementsByClassName('Japan');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/jp.svg";
+  }
+    <!--Eastern Europe -->
+    x=document.getElementsByClassName('Eastern Europe');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/ru.svg";
+  }
+   <!--Australia & NZ -->
+    x=document.getElementsByClassName('Australia & NZ');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/au.svg";
+  }
+  <!--DACH Countries -->
+    x=document.getElementsByClassName('DACH Countries');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/de.svg";
+  }
+  <!--Scandinavia -->
+    x=document.getElementsByClassName('Scandinavia');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/se.svg";
+  }
+   <!--South America -->
+    x=document.getElementsByClassName('South America');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/br.svg";
+  }
+   <!--Korea -->
+    x=document.getElementsByClassName('Korea');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/kr.svg";
+  }
+  <!--Misc.: Portugal -->
+    x=document.getElementsByClassName('Misc.: Portugal');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/pt.svg";
+  }
+  <!--Misc.: Dutch -->
+    x=document.getElementsByClassName('Misc.: Dutch');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/nl.svg";
+  }
+  <!--Misc.: Belgian -->
+    x=document.getElementsByClassName('Misc.: Belgian');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/be.svg";
+  }
+  <!--Misc.: Central America -->
+    x=document.getElementsByClassName('Misc.: Central America');
+    for (var i = 0; i < x.length; i++) {
+    x[i].src="/images/gt.svg";
+  }
+
+
+}
+</script>
+</html>
